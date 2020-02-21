@@ -1,0 +1,98 @@
+@import "small.css";
+@import "medium.css";
+
+@media screen and (min-device-width: 1000px) and (max-device-width: 1920px) and (-webkit-min-device-pixel-ratio: 1) {
+  h1 {
+    font-size: 7.594rem;
+  }
+
+  h2 {
+    font-size: 5.063rem;
+  }
+
+  h3 {
+    font-size: 3.375rem;
+  }
+
+  h4 {
+    font-size: 2.25rem;
+  }
+
+  h5 {
+    font-size: 1.5rem;
+  }
+
+  a {
+    font-size: 1rem;
+  }
+
+  .seasons {
+    grid-template-columns: 1fr 40vw;
+  }
+
+  .text--white {
+    color: white;
+  }
+
+  .hero__title {
+    margin-left: -185px;
+    letter-spacing: 1rem;
+  }
+
+  .hero__subtitle {
+    text-align: right;
+    letter-spacing: 1rem;
+    width: 63%;
+  }
+
+  .form-group label {
+    position: absolute;
+    left: 17px;
+    top: 8px;
+    font-size: 10px;
+  }
+
+  .form-group input {
+    height: 52px;
+    padding: 15px 17px;
+    padding-bottom: 5px;
+  }
+
+  .form-group textarea {
+    padding: 20px 17px;
+  }
+
+  #entryHolder {
+    padding: 5vh 20vw;
+  }
+
+  #temp__icon {
+    height: 7.594rem;
+  }
+
+  .inline-form {
+    display: flex;
+    margin-bottom: 1rem;
+  }
+
+  .form-group {
+    position: relative;
+    margin: 0;
+  }
+
+  .w-50 {
+    width: 50%;
+  }
+
+  #zip {
+    border-radius: 0;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  #name {
+    border-radius: 0;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+}

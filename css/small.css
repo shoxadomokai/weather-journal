@@ -1,0 +1,314 @@
+@font-face {
+  font-family: Bebas;
+  src: url(../fonts/bebas.ttf);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 17px;
+  --primary-colour: #c2ac13;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1 {
+  font-size: 3.052em;
+}
+
+h2 {
+  font-size: 2.441em;
+}
+
+h3 {
+  font-size: 1.953em;
+}
+
+h4 {
+  font-size: 1.563em;
+}
+
+h5 {
+  font-size: 1.25em;
+}
+
+h6,
+p {
+  font-size: 1rem;
+}
+
+a {
+  font-size: 0.56rem;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+.hero {
+  min-height: 100vh;
+  padding: 5vh 5vw;
+  position: relative;
+  z-index: 1;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-image: url(../videos/LongLightheartedBarracuda-size_restricted.gif);
+  background-size: cover;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  color: var(--primary-colour);
+  font-weight: 900;
+  letter-spacing: 0.2em;
+}
+
+.social-media {
+  display: flex;
+  list-style: none;
+}
+
+.social-media__item {
+  margin-left: 1rem;
+  filter: sepia(100);
+  transition: 0.3s filter ease;
+}
+
+.social-media__item:hover {
+  filter: sepia(0);
+}
+
+.social-media__item:first-of-type {
+  margin-left: 0;
+}
+
+.image--wrapper {
+  width: 100%;
+}
+
+.seasons {
+  display: grid;
+  grid-gap: 2rem;
+  align-items: center;
+  height: 100%;
+  /* width: 100%; */
+  padding: 5vh 0;
+}
+
+.seasons__image {
+  width: 100%;
+}
+
+.hero__text {
+  color: var(--primary-colour);
+}
+
+.hero__title {
+  font-family: bebas;
+}
+
+.hero__form {
+  margin-top: 1rem;
+}
+
+.inline-form {
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  position: relative;
+  margin: 1rem 0;
+}
+
+.form-group label {
+  position: absolute;
+  left: 17px;
+  top: 8px;
+  font-size: 1rem;
+}
+
+.form-group input {
+  width: 100%;
+  height: 80px;
+  padding: 15px 17px;
+  padding-bottom: 5px;
+  font-size: 1rem;
+  outline: none;
+  border: 2px solid #b7b7b7;
+  box-shadow: none;
+  font-weight: bold;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  font-size: 1rem;
+  color: #b7b7b7;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+}
+
+#zip {
+  border-radius: 10px;
+}
+
+#name {
+  border-radius: 10px;
+}
+
+.form-group input:active,
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--primary-colour);
+}
+
+.form-group input:valid {
+  border-color: var(--primary-colour);
+}
+
+.form-group input:not(:valid) {
+  border-color: red;
+}
+
+.form-group textarea {
+  width: 100%;
+  height: 190px;
+  padding: 30px 17px;
+  font-size: 1rem;
+  outline: none;
+  border: 2px solid #b7b7b7;
+  border-radius: 10px;
+  box-shadow: none;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+}
+
+button.form-group__button {
+  outline: none;
+  border: none;
+}
+
+.form-group__button {
+  display: block;
+  cursor: pointer;
+  background-color: var(--primary-colour);
+  padding: 7px 21px;
+  height: 36px;
+  width: 120px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 10px;
+  color: white;
+  position: absolute;
+  left: 17px;
+  bottom: 17px;
+  transition: 0.3s background-color ease;
+  /* transition: 0.3s background-color ease; */
+}
+
+.form-group__button:after {
+  position: absolute;
+  content: "Generate";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.form-group__button:hover {
+  background-color: black;
+}
+
+.form-group__button.loading {
+  width: 36px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 5px solid var(--primary-colour);
+  border-top-color: #b7b7b7;
+  cursor: default;
+  animation: spinning 0.5s linear infinite;
+}
+
+.form-group__button.loading:after {
+  content: "";
+}
+
+@keyframes spinning {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.form-group__button.error {
+  width: 36px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: red;
+  cursor: default;
+}
+
+.form-group__button.error:after {
+  content: "\f00d";
+  font-weight: 900;
+  font-family: "Font Awesome 5 Free";
+}
+
+#entryHolder {
+  min-height: 100vh;
+  padding: 5vh 5vw;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+  background: url(../images/default-bg.jpg);
+  background-size: cover !important;
+  position: relative;
+  z-index: 1;
+}
+
+#entryHolder:after {
+  content: "";
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+#entryHolder.hidden {
+  display: none;
+}
+
+.content__title {
+  margin-bottom: 2rem;
+}
+
+#temp__icon {
+  height: 1.802rem;
+}
+
+#temp__result {
+  font-family: "Segoe UI Symbol";
+}
