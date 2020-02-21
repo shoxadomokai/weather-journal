@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Weather Journal</title>
+  <link href="https://fonts.googleapis.com/css?family=Oswald:400,600,700|Ranga:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="css/large.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <div id="app">
+    <header class="hero">
+      <nav class="navigation">
+        <p class="logo">WEATHER JOURNAL</p>
+        <ul class="social-media">
+          <li class="social-media__item"><a href="" class="social-media__link"><img src="images/twitter.svg" alt=""></a>
+          </li>
+          <li class="social-media__item"><a href="" class="social-media__link"><img src="images/facebook.svg"
+                alt=""></a></li>
+          <li class="social-media__item"><a href="" class="social-media__link"><img src="images/linkedin.svg"
+                alt=""></a></li>
+          <li class="social-media__item"><a href="" class="social-media__link"><img src="images/github.svg" alt=""></a>
+          </li>
+        </ul>
+      </nav>
+      <div class="seasons">
+        <div class="image--wrapper animated fadeInLeft">
+          <img class="seasons__image" src="images/seasons.svg" alt="">
+        </div>
+
+        <div class="hero__text">
+          <h1 class="hero__title animated fadeInUp delay-1s"><span class="text--white">Ex</span>press</h1>
+          <h5 class="hero__subtitle animated fadeInRight slower">YOURSELF</h5>
+          <form class="hero__form animated fadeInLeft delay-2s" id="submissionForm">
+            <div class="inline-form">
+              <div class="form-group w-50">
+                <label for="zip">Where</label>
+                <input required placeholder="Enter Zipcode or State" type="text" name="state" id="zip">
+              </div>
+              <div class="form-group w-50">
+                <label for="name">Name</label>
+                <input required placeholder="Enter your name" type="text" name="firstname" id="name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="feelings">How are you feeling today?</label>
+              <textarea required placeholder="What's on your mind?" name="feelings" id="feelings"></textarea>
+              <button id="generate" class="form-group__button" title="generate" type="submit"></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </header>
+
+    <section id="entryHolder" class="hidden">
+      <!-- div with id of date -->
+      <div class="animated fadeIn slower delay-3s" id="date">20th of Febraury, 2020</div>
+
+      <!-- div with id of temp -->
+      <div id="temp" class="animated fadeInDown slower">
+        <h1 class="temp__result">
+          <img id="temp__icon" src="http://openweathermap.org/img/w/04d.png"><span id="temp__value">27</span>&#8451
+        </h1>
+        <h3 class="greeting">
+          <span id="time">Good Morning</span>, <span id="userName">Shox</span>
+        </h3>
+      </div>
+
+      <!-- div with id of content -->
+      <div id="content">
+        <h4 class="content__title animated fadeInRight slower delay-1s">Here's how you're feeling</h4>
+        <p id="content__description" class="animated fadeInUp slower delay-2s">Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Maiores quisquam dolore ipsam eveniet cum. Pariatur totam animi maxime tempora facere?</p>
+      </div>
+
+      <h6 id="location-display" class="animated slower delay-4s fadeIn">Lagos, Nigeria</h6>
+    </section>
+
+  </div>
+  <script src="app.js" type="text/javascript"></script>
+
+</body>
+
+</html>
