@@ -27,6 +27,17 @@ const enableClicks = () => {
   }
 };
 
+const timeOfDay = () => {
+  let hours = new Date().getHours();
+  if (hours >= 00 && hours <= 12) {
+    return "Good Morning";
+  } else if (hours >= 12 && hours <= 17) {
+    return "Good Afternoon";
+  } else {
+    return "Good Evening";
+  }
+};
+
 const getWeather = async (weatherUrl, location, weatherApiKey) => {
   const res = await fetch(weatherUrl + location + weatherApiKey);
   try {
@@ -83,6 +94,7 @@ const updateUI = async () => {
     const allData = await request.json();
     //update UI components
     document.getElementById("temp__value").innerHTML = allData.temperature;
+    document.getElementById("time").innerHTML = timeOfDay();
     document.getElementById("userName").innerHTML = allData.userName;
     document.getElementById("content__description").innerHTML =
       allData.userFeelings;
