@@ -1,11 +1,23 @@
 # Weather-Journal App Project
 
 ## Overview
-This project requires you to create an asynchronous web app that uses Web API and user data to dynamically update the UI. 
+
+A node.js project built using the fetch API to create an asynchronous web app that uses Web API and user data to dynamically update the UI.
+
+It receives the user's name, location and feeling to create a mood board at the given moment.
 
 ## Instructions
-This will require modifying the `server.js` file and the `website/app.js` file. You can see `index.html` for element references, and once you are finished with the project steps, you can use `style.css` to style your application to customized perfection.
 
-## Extras
-If you are interested in testing your code as you go, you can use `tests.js` as a template for writing and running some basic tests for your code.
-"# weather-journal-app" 
+Nothing fancy here in terms of installation simply clone the repo or make a fork and work your magic.
+
+Not sure how to clone a repo? Check out this link from GitHub explaining how.
+
+### User Input
+
+The app takes the user's location, name and current mode to populate the moodboard.
+
+The moodboard is inititally give a class of hidden to prevent user scrolling. The class is revealed when the content required to populate it has been generated.
+
+### Background
+
+The background of the moodboard is retrieved through the unsplash API with the user's entered location as the search parameter. The first image is retrieved and set as the background.
