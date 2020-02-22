@@ -16,15 +16,9 @@ const formElements = document.querySelector("#submissionForm").elements;
 const entryHolder = document.getElementById("entryHolder");
 
 // General functions
-const disableClicks = () => {
+const disableClicks = boolean => {
   for (formElement of formElements) {
-    formElement.readOnly = true;
-  }
-};
-
-const enableClicks = () => {
-  for (formElement of formElements) {
-    formElement.readOnly = false;
+    formElement.readOnly = boolean;
   }
 };
 
@@ -50,7 +44,7 @@ const getWeather = async (weatherUrl, location, weatherApiKey) => {
       submitButton.classList.add("error");
       submitButton.setAttribute("title", `Error: ${data.message}`);
     }
-    enableClicks();
+    disableClicks(false);
     return data;
   } catch (error) {
     submitButton.classList.remove("loading");
@@ -63,7 +57,8 @@ const backgroundImage = async (unsplashUrl, location, unsplashApiKey) => {
   const res = await fetch(unsplashUrl + location + unsplashApiKey);
   try {
     const image = await res.json();
-    const firstImage = image.results[0].urls.full;
+    figureNumber = Math.round(Math.random() * 10);
+    const firstImage = image.results[figureNumber].urls.full;
     entryHolder.setAttribute("style", `background: url(${firstImage});`);
   } catch (error) {
     console.log("error", error);
@@ -116,21 +111,20 @@ const updateUI = async () => {
         .getElementById("temp__icon")
         .classList.add("owf", `owf-${allData.icon}-n`);
     }
-
-    animateEntryHolder();
+    // setTimeout(animateEntryHolder(), 10);
   } catch (error) {
     console.log("error", error);
   }
 };
 
 const animateEntryHolder = () => {
-  entryHolder.classList.remove("hidden");
+  entryHolder.removeAttribute("class");
   entryHolder.scrollIntoView();
 };
 
 submitButton.addEventListener("click", function(event) {
   event.preventDefault();
-  disableClicks();
+  disableClicks(true);
   this.className = "";
   this.classList.add("form-group__button");
   this.classList.add("loading");
@@ -150,6 +144,7 @@ submitButton.addEventListener("click", function(event) {
     };
     postData("/add", information)
       .then(backgroundImage(unsplashUrl, location, unsplashApiKey))
-      .then(updateUI());
+      .then(updateUI())
+      .then(animateEntryHolder());
   });
 });

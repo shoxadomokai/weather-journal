@@ -28,6 +28,8 @@
 
   .seasons {
     grid-template-columns: 1fr 40vw;
+    padding: 5% 0;
+    grid-gap: 2rem;
   }
 
   .text--white {
