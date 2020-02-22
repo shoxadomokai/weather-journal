@@ -14,6 +14,35 @@ html {
 }
 
 h1 {
+  font-size: 7.594rem;
+}
+
+h2 {
+  font-size: 5.063rem;
+}
+
+h3 {
+  font-size: 3.375rem;
+}
+
+h4 {
+  font-size: 2.25rem;
+}
+
+h5 {
+  font-size: 1.5rem;
+}
+
+h6,
+p {
+  font-size: 1rem;
+}
+
+a {
+  font-size: 1rem;
+}
+
+/* h1 {
   font-size: 3.052em;
 }
 
@@ -40,7 +69,7 @@ p {
 
 a {
   font-size: 0.56rem;
-}
+} */
 
 body {
   font-family: "Poppins", sans-serif;
@@ -48,13 +77,20 @@ body {
 }
 
 .hero {
-  min-height: 100vh;
+  height: 100vh;
   padding: 5vh 5vw;
+  overflow: hidden;
+  display: flex;
   position: relative;
-  z-index: 1;
+  align-items: center;
 }
 
 .navigation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 5vh 5vw;
   display: flex;
   justify-content: space-between;
 }
@@ -90,10 +126,10 @@ body {
 
 .seasons {
   display: grid;
-  grid-gap: 2rem;
-  align-items: center;
-  height: 100%;
-  padding: 10vh 0;
+  grid-gap: 5rem;
+  width: 100%;
+  /* align-items: center; */
+  /* padding: 10% 0; */
 }
 
 .seasons__image {
@@ -106,6 +142,7 @@ body {
 
 .hero__text--large {
   width: fit-content;
+  width: -moz-fit-content;
 }
 
 .hero__title {
@@ -176,7 +213,7 @@ body {
 
 .form-group textarea {
   width: 100%;
-  height: 190px;
+  height: 200px;
   padding: 30px 17px;
   font-size: 1rem;
   outline: none;
@@ -283,7 +320,9 @@ button.form-group__button {
 }
 
 #entryHolder.hidden {
+  opacity: 0;
   display: none;
+  visibility: hidden;
 }
 
 .content__title {
