@@ -1,8 +1,3 @@
-@font-face {
-  font-family: Bebas;
-  src: url(../fonts/bebas.ttf);
-}
-
 * {
   padding: 0;
   margin: 0;
@@ -59,19 +54,6 @@ body {
   z-index: 1;
 }
 
-.hero::after {
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background-image: url(../videos/LongLightheartedBarracuda-size_restricted.gif);
-  background-size: cover;
-  opacity: 0.2;
-  z-index: -1;
-}
-
 .navigation {
   display: flex;
   justify-content: space-between;
@@ -111,8 +93,7 @@ body {
   grid-gap: 2rem;
   align-items: center;
   height: 100%;
-  /* width: 100%; */
-  padding: 5vh 0;
+  padding: 10vh 0;
 }
 
 .seasons__image {
@@ -123,8 +104,12 @@ body {
   color: var(--primary-colour);
 }
 
+.hero__text--large {
+  width: fit-content;
+}
+
 .hero__title {
-  font-family: bebas;
+  line-height: 1;
 }
 
 .hero__form {
@@ -306,7 +291,8 @@ button.form-group__button {
 }
 
 #temp__icon {
-  height: 1.802rem;
+  margin-right: 1rem;
+  font-size: 70%;
 }
 
 #temp__result {

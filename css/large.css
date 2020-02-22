@@ -36,13 +36,11 @@
 
   .hero__title {
     margin-left: -185px;
-    letter-spacing: 1rem;
   }
 
   .hero__subtitle {
     text-align: right;
     letter-spacing: 1rem;
-    width: 63%;
   }
 
   .form-group label {
@@ -64,10 +62,6 @@
 
   #entryHolder {
     padding: 5vh 20vw;
-  }
-
-  #temp__icon {
-    height: 7.594rem;
   }
 
   .inline-form {

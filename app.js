@@ -8,6 +8,7 @@ const unsplashApiKey = "&client_id=g-9sgbiT55ggjoCi_eFssZOewGDmFRjysKbofT62e30";
 // Create a new date instance dynamically with JS
 let d = new Date();
 let newDate = d.getMonth() + " / " + d.getDate() + " / " + d.getFullYear();
+let hours = new Date().getHours();
 
 // html elements
 const submitButton = document.getElementById("generate");
@@ -28,7 +29,6 @@ const enableClicks = () => {
 };
 
 const timeOfDay = () => {
-  let hours = new Date().getHours();
   if (hours >= 00 && hours <= 12) {
     return "Good Morning";
   } else if (hours >= 12 && hours <= 17) {
@@ -98,18 +98,25 @@ const updateUI = async () => {
     document.getElementById("userName").innerHTML = allData.userName;
     document.getElementById("content__description").innerHTML =
       allData.userFeelings;
-    document.getElementById("location-display").innerHTML =
-      allData.city + ", " + allData.country;
+    document.getElementById(
+      "location-display"
+    ).innerHTML = `${allData.city}, ${allData.country}`;
     document.getElementById("date").innerHTML = newDate;
     document
       .getElementById("temp__icon")
       .setAttribute("title", allData.weather);
-    document
-      .getElementById("temp__icon")
-      .setAttribute(
-        "src",
-        `http://openweathermap.org/img/w/${allData.icon}.png`
-      );
+    document.getElementById("temp__icon").setAttribute("class", "");
+    //apply icon based on time of day
+    if (hours >= 00 && hours <= 18) {
+      return document
+        .getElementById("temp__icon")
+        .classList.add("owf", `owf-${allData.icon}-d`);
+    } else {
+      document
+        .getElementById("temp__icon")
+        .classList.add("owf", `owf-${allData.icon}-n`);
+    }
+
     animateEntryHolder();
   } catch (error) {
     console.log("error", error);
@@ -137,7 +144,7 @@ submitButton.addEventListener("click", function(event) {
       temperature: Math.round(data.main.temp - 273),
       country: data.sys.country,
       weather: data.weather[0].description,
-      icon: data.weather[0].icon,
+      icon: data.weather[0].id,
       userName: name,
       userFeelings: feelings
     };

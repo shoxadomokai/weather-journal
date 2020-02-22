@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <title>Weather Journal</title>
   <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="css/owfont-regular.min.css">
   <link rel="stylesheet" href="css/large.css">
   <link rel="stylesheet" href="css/animate.css">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -32,8 +33,11 @@
         </div>
 
         <div class="hero__text">
-          <h1 class="hero__title animated fadeInUp delay-1s"><span class="text--white">Ex</span>press</h1>
-          <h5 class="hero__subtitle animated fadeInRight slower">YOURSELF</h5>
+          <div class="hero__text--large">
+            <h1 class="hero__title animated fadeInUp delay-1s"><span class="text--white">EX</span>PRESS</h1>
+            <h5 class="hero__subtitle animated fadeInRight slower">YOURSELF</h5>
+          </div>
+
           <form class="hero__form animated fadeInLeft delay-2s" id="submissionForm">
             <div class="inline-form">
               <div class="form-group w-50">
@@ -55,14 +59,14 @@
       </div>
     </header>
 
-    <section id="entryHolder" class="hidden">
+    <section id="entryHolder" class="">
       <!-- div with id of date -->
       <div class="animated fadeIn slower delay-3s" id="date">20th of Febraury, 2020</div>
 
       <!-- div with id of temp -->
       <div id="temp" class="animated fadeInDown slower">
         <h1 class="temp__result">
-          <img id="temp__icon" src="" alt="icon indicating current weather"><span id="temp__value">27</span>&#8451
+          <i id="temp__icon" class="owf owf-802"></i><span id="temp__value">27</span>&#8451
         </h1>
         <h3 class="greeting">
           <span id="time">Good Morning</span>, <span id="userName">Shox</span>
