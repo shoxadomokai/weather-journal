@@ -12,7 +12,7 @@ let hours = new Date().getHours();
 
 // html elements
 const submitButton = document.getElementById("generate");
-const formElements = document.querySelector("#submissionForm").elements;
+const formElements = document.getElementById("submissionForm").elements;
 const entryHolder = document.getElementById("entryHolder");
 
 // General functions
@@ -126,8 +126,7 @@ submitButton.addEventListener("click", function(event) {
   event.preventDefault();
   disableClicks(true);
   this.className = "";
-  this.classList.add("form-group__button");
-  this.classList.add("loading");
+  this.classList.add("form-group__button", "loading");
   const location = document.getElementById("zip").value;
   const name = document.getElementById("name").value;
   const feelings = document.getElementById("feelings").value;
